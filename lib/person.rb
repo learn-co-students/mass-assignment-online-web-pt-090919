@@ -1,10 +1,9 @@
- attributes = {name: "Bob", hair_color: "Brown" , eye_color: "Brown"}
-
 class Person
-  
-  attr_accessor :name , :hair_color, :eye_color
-  
-  def initialize(attributes)
-    attributes.each {|key, value} self.send(("#{key}="), value)}
+  attr_accessor :name, :birthday, :hair_color, :eye_color, :height, :weight, :handed, :complexion, :t_shirt_size, :wrist_size, :glove_size, :pant_length, :pant_width
+  def initialize(attributes=nil)
+    if attributes
+      attributes.each do |k,v| self.send("#{k}=", v)
+      end
+    end
   end
 end
